@@ -152,7 +152,7 @@ public class TopBarPart extends UIPart {
 
 		// cursor tool buttons
 		var space:int = 3;
-		copyTool.x = app.isOffline ? 493 : 427;
+		copyTool.x = 523;
 		cutTool.x = copyTool.right() + space;
 		growTool.x = cutTool.right() + space;
 		shrinkTool.x = growTool.right() + space;

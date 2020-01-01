@@ -75,7 +75,7 @@ public class SensingPrims {
 	}
 
 	// TODO: move to stage
-	static private var stageRect:Rectangle = new Rectangle(0, 0, 480, 360);
+	static private var stageRect:Rectangle = new Rectangle(0, 0, 1280, 720);
 	private function primTouching(b:Block):Boolean {
 		var s:ScratchSprite = interp.targetSprite();
 		if (s == null) return false;

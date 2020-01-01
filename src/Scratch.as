@@ -140,6 +140,7 @@ public class Scratch extends Sprite {
 		SVGTool.setStage(stage);
 		loaderInfo.uncaughtErrorEvents.addEventListener(UncaughtErrorEvent.UNCAUGHT_ERROR, uncaughtErrorHandler);
 		app = this;
+		stageIsContracted = true;
 
 		// This one must finish before most other queries can start, so do it separately
 		determineJSAccess();
@@ -933,23 +934,23 @@ public class Scratch extends Sprite {
 			// adjust for global scale (from browser zoom)
 
 			if (stageIsContracted) {
-				stagePart.setWidthHeight(240 + extraW, 180 + extraH, 0.5);
+				stagePart.setWidthHeight(640 + extraW, 360 + extraH, 0.5);
 			} else {
-				stagePart.setWidthHeight(480 + extraW, 360 + extraH, 1);
+				stagePart.setWidthHeight(1280 + extraW, 720 + extraH, 1);
 			}
 			stagePart.x = 5;
 			stagePart.y = isMicroworld ? 5 : topBarPart.bottom() + 5;
 			fixLoadProgressLayout();
 		} else {
 			drawBG();
-			var pad:int = (w > 550) ? 16 : 0; // add padding for full-screen mode
-			var scale:Number = Math.min((w - extraW - pad) / 480, (h - extraH - pad) / 360);
+			var pad:int = (w > 1300) ? 16 : 0; // add padding for full-screen mode
+			var scale:Number = Math.min((w - extraW - pad) / 1280, (h - extraH - pad) / 360);
 			scale = Math.max(0.01, scale);
-			var scaledW:int = Math.floor((scale * 480) / 4) * 4; // round down to a multiple of 4
-			scale = scaledW / 480;
+			var scaledW:int = Math.floor((scale * 1280) / 4) * 4; // round down to a multiple of 4
+			scale = scaledW / 1280;
 			presentationScale = scale;
-			var playerW:Number = (scale * 480) + extraW;
-			var playerH:Number = (scale * 360) + extraH;
+			var playerW:Number = (scale * 1280) + extraW;
+			var playerH:Number = (scale * 720) + extraH;
 			stagePart.setWidthHeight(playerW, playerH, scale);
 			stagePart.x = int((w - playerW) / 2);
 			stagePart.y = int((h - playerH) / 2);
@@ -1226,7 +1227,8 @@ public class Scratch extends Sprite {
 		d.addText(
 			"This mod of scratch-flash downloads Scratch 2.0 (sb2) projects\nfrom scratch.mit.edu and loads them into the editor.\n\n" +
 			"This tool was created so that it could be easy to run existing\nprojects in Scratch 2.0. It cannot upload or share projects.\n\n" +
-			"s2online was made by towerofnix (_nix) and uses code from\nMegaApuTurkUltra's Scratch Project Backup tool on CodePen."
+			"s2online was made by towerofnix (_nix) and uses code from\nMegaApuTurkUltra's Scratch Project Backup tool on CodePen.\n\n" +
+            "This specific version, s16:9online, displays projects with a 16:9 aspect\nratio. It's not especially supported and there's no guarantee that\nevery feature/part of the UI will operate as intended. Sorry! :P"
 		);
 		d.addField('Project ID', 120);
 		d.addAcceptCancelButtons('Download and Reload');

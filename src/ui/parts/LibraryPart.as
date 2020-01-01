@@ -150,8 +150,8 @@ public class LibraryPart extends UIPart {
 		var buttonY:int = 4;
 
 		if (!app.isMicroworld) {
-			libraryButton.x = 380;
-			if (app.stageIsContracted) libraryButton.x = 138;
+			libraryButton.x = 1180;
+			if (app.stageIsContracted) libraryButton.x = 540;
 			libraryButton.y = buttonY + 0;
 			paintButton.x = libraryButton.x + libraryButton.width + 3;
 			paintButton.y = buttonY + 1;
@@ -197,8 +197,8 @@ public class LibraryPart extends UIPart {
 	public function refresh():void {
 		// Create thumbnails for all sprites. This function is called
 		// after loading project, or adding or deleting a sprite.
-		newSpriteLabel.visible = !app.stageIsContracted && !app.isMicroworld;
-		spritesTitle.visible = !app.stageIsContracted;
+		newSpriteLabel.visible = !app.isMicroworld;
+		spritesTitle.visible = true;
 		if (app.viewedObj().isStage) showSpriteDetails(false);
 		if (spriteDetails.visible) spriteDetails.refresh();
 		if (stageThumbnail) stageThumbnail.setTarget(app.stageObj());

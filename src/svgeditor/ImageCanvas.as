@@ -37,8 +37,8 @@ public class ImageCanvas extends Sprite {
 	private var segmentationLayer:Bitmap;
 	private var visibleMask:Shape;
 
-	static public const canvasWidth:uint = 480;
-	static public const canvasHeight:uint = 360;
+	static public const canvasWidth:uint = 1280;
+	static public const canvasHeight:uint = 720;
 	static private const canvasBorderWidth:uint = 25;
 	static private const scrollbarThickness:int = 9;
 	static private const maxZoom:Number = 16;

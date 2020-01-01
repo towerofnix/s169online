@@ -282,7 +282,7 @@ public class ScratchRuntime {
 				f.copyPixels(circle.bitmapData,circle.bitmapData.rect,new Point(app.stagePane.mouseX-circle.width/2.0,app.stagePane.mouseY-circle.height/2.0));
 			}
 			if (showCursor) {
-				f.draw(cursor,new Matrix(1,0,0,1,app.stagePane.scratchMouseX()+240,-app.stagePane.scratchMouseY()+180));
+				f.draw(cursor,new Matrix(1,0,0,1,app.stagePane.scratchMouseX()+640,-app.stagePane.scratchMouseY()+360));
 			}
 		}
 		while (videoSounds.length>videoFrames.length) {
@@ -376,8 +376,8 @@ public class ScratchRuntime {
 			}
 		}
 		else {
-			videoWidth = 480;
-			videoHeight = 360;
+			videoWidth = 1280;
+			videoHeight = 720;
 		}
 		ready=ReadyLabel.COUNTDOWN;
 		videoSeconds = CachedTimer.getCachedTimer()*.001;

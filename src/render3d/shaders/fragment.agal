@@ -185,7 +185,7 @@ ft4.z *= ft3.y //h_g_eq_v = h_g_eq_v * g_eq_v;
 
 ft4.w = ft1.x - ft1.y //float h_b_eq_v = dst.r - dst.g;		h_b_eq_v	= ft4.w
 ft4.w *= ft4.x //h_b_eq_v = h_b_eq_v * 60_div_span;
-ft4.w += 240 //h_b_eq_v = h_b_eq_v + 240;
+ft4.w += 640 //h_b_eq_v = h_b_eq_v + 640;
 ft4.w *= ft3.z //h_b_eq_v = h_b_eq_v * b_eq_v;
 
 /*** ft2 == (h, s, v) ***/

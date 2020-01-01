@@ -279,12 +279,12 @@ SCRATCH::allow3d{
 		var p:Point = scratchStage.localToGlobal(originPt);
 		stage3D.x = p.x;
 		stage3D.y = p.y;
-		var width:uint = Math.ceil(480 * appScale);
-		var height:uint = Math.ceil(360 * appScale);
+		var width:uint = Math.ceil(1280 * appScale);
+		var height:uint = Math.ceil(720 * appScale);
 		var rect:Rectangle = new Rectangle(0, 0, width, height);
 		if (stage3D.context3D && (!scissorRect || !scissorRect.equals(rect))) {
 			scissorRect = rect;
-			projMatrix = createOrthographicProjectionMatrix(480, 360, 0, 0);
+			projMatrix = createOrthographicProjectionMatrix(1280, 720, 0, 0);
 			stage3D.context3D.setScissorRectangle(scissorRect);
 			stage3D.context3D.configureBackBuffer(width, height, 0, false, true);
 //trace('Setting backbuffer and scissor rectangle');

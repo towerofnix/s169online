@@ -249,8 +249,8 @@ public class GestureHandler {
 		if ((gesture == "drag") && (carriedObj is ScratchSprite)) {
 			var stageP:Point = app.stagePane.globalToLocal(carriedObj.localToGlobal(new Point(0, 0)));
 			var spr:ScratchSprite = ScratchSprite(carriedObj);
-			spr.scratchX = stageP.x - 240;
-			spr.scratchY = 180 - stageP.y;
+			spr.scratchX = stageP.x - 640;
+			spr.scratchY = 360 - stageP.y;
 			spr.updateBubble();
 		}
 		var oldTarget:ScrollFrame = scrollTarget;
